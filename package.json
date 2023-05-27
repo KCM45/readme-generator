@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Generate a README from the command line",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/KCM45/readme-generator#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "inquire": "^0.4.8",
     "inquirer": "^9.2.6"
   }
