@@ -22,17 +22,31 @@ inquirer
     const md = generateMD(answers.title, answers.description);
     writeREADME(md);
   });
-
+``;
 function generateMD(title, description) {
   const md = `# ${title} 
   
-  ${description}`;
+  ## Description
+  ${description}
 
+  ## Table of Contents
+  
+  ## Installation
+  
+  ## Usage
+  
+  ## License
+  
+  ## Contributing
+  
+  ## Tests
+  
+  ## Questions`;
   return md;
 }
 
 const writeREADME = (md) => {
-  fs.writeFile("README.md", md, function (err, result) {
+  fs.writeFile("./readme_output/README.md", md, function (err, result) {
     if (err) console.log("error", err);
   });
 };
