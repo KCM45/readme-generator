@@ -17,31 +17,59 @@ inquirer
       message: "What is the description of your project?",
       type: "input",
     },
+    {
+      name: "installation",
+      message: "What are the installation instructions?",
+      type: "input",
+    },
+    {
+      name: "usage",
+      message: "Which license?",
+      type: "list",
+      choices: ["Apache License 2.0", "MIT License"],
+    },
+    {
+      name: "username",
+      message: "What is your GitHub username?",
+      type: "input",
+    },
   ])
   .then((answers) => {
-    const md = generateMD(answers.title, answers.description);
+    const md = generateMD(
+      answers.title,
+      answers.description,
+      answers.installation,
+      answers.usage,
+      answers.username
+    );
     writeREADME(md);
   });
 ``;
-function generateMD(title, description) {
+function generateMD(title, description, installation, usage, username) {
   const md = `# ${title} 
   
   ## Description
   ${description}
 
   ## Table of Contents
+  1. [Installation](#Installation)
+  2, [Usage](#Usage)
+  3. [Contributing](#Contributing)
+  4. [Tests](#Tests)
+  5. [Questions](#Questions)
   
-  ## Installation
+  ### Installation
+  ${installation}
   
-  ## Usage
+  ### Usage
+  ${usage}
   
-  ## License
+  ### Contributing
   
-  ## Contributing
+  ### Tests
   
-  ## Tests
-  
-  ## Questions`;
+  ### Questions
+  [GitHub](https://github.com/${username})`;
   return md;
 }
 
