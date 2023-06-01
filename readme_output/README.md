@@ -1,7 +1,7 @@
-# glad 
+# README Generator 
   
   ## Description
-  awesome
+  An app the creates a professional README
 
   ## Table of Contents
   1. [Installation](#Installation)
@@ -11,7 +11,7 @@
   5. [Questions](#Questions)
   
   ### Installation
-  screw right
+  Clone from GitHub and run on local computer
   
   ### Usage
   Apache License 2.0
